@@ -1,0 +1,69 @@
+@deep: ~'/deep/';
+
+.app{
+    position: relative;
+    width:578px;
+    height:678px;
+    background-color: white;
+    padding:30px 35px 40px;
+    border:1px solid #8D734A;
+
+    a{
+        position:absolute;
+        right: 35px;
+        top: 30px;
+        width:130px;
+        height:23px;
+        transition: opacity .3s;
+
+        .nespresso{
+            width:130px;
+            height:23px;
+            background:url("./../assets/images/nespresso.svg") no-repeat right top;
+            background-size: contain;
+        }
+
+        &:hover{
+            opacity:0.8;
+        }
+    }
+
+    app-slide{
+        @{deep} .slide{
+            opacity:0;
+            transition: opacity .3s;
+        }
+        
+        &.current{
+            @{deep} .slide{
+                opacity:1;
+            }
+        }
+    }
+
+    .arrow{
+        position:absolute;
+        width:12px;
+        height:23px;
+        transition: opacity .3s;
+        top:50%;
+        transform: translate(0, -50%);
+        cursor:pointer;
+
+        &:hover{
+            opacity:0.8;
+        }
+
+        &.left{
+            left:20px;
+            background: url("./../assets/images/left.svg") no-repeat left center;
+            background-size: contain;
+        }
+
+        &.right{
+            right:20px;
+            background:url("./../assets/images/right.svg") no-repeat right center;
+            background-size: contain;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<article class="slide">
+  <header>
+    <div class="title" [innerHTML]="slide.title"></div>
+  </header>
+  <main>
+    <section>
+      <div class="column">
+        <div *ngIf="slide.first.title" class="title" [innerHTML]="slide.first.title"></div>
+        <div *ngIf="slide.first.description" class="description" [innerHTML]="slide.first.description"></div>
+        <div *ngFor="let l of slide.first.list" class="list-item">
+          <div class="marker" [style.background-color]="sanitizeColor(l.color)">{{l.marker}}</div>
+          <div class="text" [innerHTML]="l.text" [class.title]="!slide.first.title"></div>
+        </div>
+      </div>
+      <div *ngIf="slide.second" class="column">
+        <div *ngIf="slide.second.title" class="title" [innerHTML]="slide.second.title"></div>
+        <div *ngIf="slide.second.description" class="description" [innerHTML]="slide.second.description"></div>
+        <div *ngFor="let l of slide.second.list" class="list-item">
+          <div class="marker" [style.background-color]="sanitizeColor(l.color)">{{l.marker}}</div>
+          <div class="text" [innerHTML]="l.text" [class.title]="!slide.second.title"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="text" [innerHTML]="slide.end"></div>
+  </footer>
+</article>

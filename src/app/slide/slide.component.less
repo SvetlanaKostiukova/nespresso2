@@ -1,0 +1,72 @@
+@deep: ~'/deep/';
+
+.slide{
+    position:absolute;
+    height:calc(~"100% - 70px");
+    width:calc(~"100% - 70px");
+    background: white;
+
+    header{
+        padding-bottom:30px;
+
+        .title{
+            font:bold 26px/32px 'PT Serif';
+        }
+    }
+
+    main{
+        section{
+            display: flex;
+            .column{
+                max-width:270px;
+
+                &:nth-child(1){
+                    padding-right:20px;
+                }
+
+                .title{
+                    font:bold 16px/20px 'PT Serif';
+                    padding-bottom: 10px;
+                }
+
+                .description{
+                    font:normal 12px/15px "Roboto Regular";
+                    padding-bottom: 10px;
+                }
+
+                .list-item{
+                    display: flex;
+                    font:normal 16px/20px 'PT Serif';
+                    padding-bottom:10px;
+
+                    .marker{
+                        width:18px;
+                        height:18px;
+                        min-width:18px;
+                        text-align:center;
+                        vertical-align: middle;
+                        line-height:16px;
+                        border:1px solid transparent;
+                        border-radius:100%;
+                    }
+
+                    .text{
+                        padding-left:10px;
+
+                        @{deep} span{
+                            font:normal 12px/15px "Roboto Regular";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        position:absolute;
+        bottom:0;
+
+        .text{
+            font:normal 16px/20px 'PT Serif';
+        }
+    }
+}

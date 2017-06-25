@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<div class="app">
+  <app-slide *ngFor="let slide of slides; let i=index;" [slide]="slide" [class.current]="currSlide==i"></app-slide>
+  <a href="" target="_blank"><div class="nespresso"></div></a>
+  <div class="arrow left" (click)="switchSlide(-1)"></div>
+  <div class="arrow right" (click)="switchSlide(1)"></div>
+</div>
