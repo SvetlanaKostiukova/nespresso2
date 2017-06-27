@@ -1,9 +1,7 @@
-<article class="slide">
+<article class="slide" [ngClass]="idx">
   <header>
     <div class="title" [innerHTML]="slide.title"></div>
-  </header>
-  <main>
-    <section>
+    <section class="info-container">
       <div class="column">
         <div *ngIf="slide.first.title" class="title" [innerHTML]="slide.first.title"></div>
         <div *ngIf="slide.first.description" class="description" [innerHTML]="slide.first.description"></div>
@@ -20,6 +18,11 @@
           <div class="text" [innerHTML]="l.text" [class.title]="!slide.second.title"></div>
         </div>
       </div>
+    </section>
+  </header>
+  <main>
+    <section class="image-container">
+      <img [src]="'./../../assets/images/' + slide.image" width="auto" height="100%"/>
     </section>
   </main>
   <footer>

@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SlideComponent implements OnInit {
   @Input() slide: any;
+  @Input() idx: string = "";
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {

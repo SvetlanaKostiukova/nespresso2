@@ -31,11 +31,13 @@
     app-slide{
         @{deep} .slide{
             opacity:0;
+            pointer-events: none;
             transition: opacity .3s;
         }
         
         &.current{
             @{deep} .slide{
+                pointer-events: all;
                 opacity:1;
             }
         }
