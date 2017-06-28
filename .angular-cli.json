@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.less",
-        "normalize.less"
+        "normalize.less",
+        "assets/fonts/stylesheet.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
