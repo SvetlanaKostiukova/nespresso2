@@ -77,7 +77,7 @@ export class AppComponent {
     }
   }
 
-  toggleInfo(){
+  toggleInfo(e){
     this.showInfo = !this.showInfo;
   }
 
