@@ -2,6 +2,7 @@
 
 .slide{
     position:absolute;
+    top:30px;
     height:calc(~"100% - 70px");
     width:calc(~"100% - 70px");
     background: white;
@@ -9,19 +10,39 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @media(max-width:649px){
+        width:calc(~"100% - 42px");
+        height:auto;
+        top:10px;
+    }
+
     header{
 
         .title{
             font:bold 26px/32px 'PT Serif';
             padding-bottom:30px;
+
+            @media(max-width:649px){
+                font-size:20px;
+                line-height: 24px;
+                padding-bottom: 15px;
+            }
         }
 
         .info-container{
             display: flex;
             // height:205px;
 
+            @media(max-width:649px){
+                flex-direction: column;
+            }
+
             .column{
                 max-width:270px;
+
+                @media(max-width:649px){
+                    max-width: initial;
+                }
 
                 &:nth-child(1){
                     padding-right:20px;
@@ -30,6 +51,11 @@
                 .title{
                     font:bold 16px/20px 'PT Serif';
                     padding-bottom: 10px;
+
+                    @media(max-width:649px){
+                        font-size:14px;
+                        line-height: 16px;
+                    }
                 }
 
                 .description{
@@ -41,6 +67,15 @@
                     display: flex;
                     font:normal 16px/20px 'PT Serif';
                     padding-bottom:10px;
+                    
+                    @media(max-width:649px){
+                        font-size: 14px;
+                        line-height: 18px;
+
+                        .text.title{
+                            padding-bottom: 0;
+                        }
+                    }
 
                     .marker{
                         width:18px;
@@ -66,14 +101,21 @@
     }
 
     main{
+
         .image-container{
             // max-height:400px;
             // height:calc(~"100% - 282px");
             text-align: center;
             padding-bottom: 15px;
 
-            .image, img{
+            @media(max-width:649px){
+                margin: 0 auto;
+                padding:15px 5px;
+            }
+
+            .image, img, svg{
                 max-height: 380px;
+                // margin:0 auto;
 
                 @{deep} .path{
                     opacity:0;
@@ -84,14 +126,33 @@
                     }
                 }
 
-                @{deep} text.sign{
+                @{deep} .sign{
                     opacity:0;
                     transition: opacity .9s;
 
                     &.shown{
                         opacity: 1;
                     }
-                }   
+                } 
+
+                // @media(max-width:649px){
+                //     max-height: initial;
+                // } 
+            }
+
+            svg, img{
+                
+                &.mobile{
+                    display: none;
+                } 
+
+                @media(max-width:649px){
+                    display: none;
+
+                    &.mobile{
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -99,7 +160,7 @@
     &.slide1{
         main{
             .image-container{
-                .image{
+                .image, img, svg{
                     max-height: 340px;
                 }
             }
@@ -109,7 +170,7 @@
     &.slide3{
         main{
             .image-container{
-                .image{
+                .image, img, svg{
                     max-height: 300px;
                 }
             }
@@ -122,6 +183,11 @@
 
         .text{
             font:normal 16px/20px 'PT Serif';
+
+            @media(max-width:649px){
+                font-size: 14px;
+                line-height: 18px;
+            }
         }
     }
 }

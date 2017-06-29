@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
   currSlide:number = 0;
+  showInfo:boolean = window.innerWidth > 649;
   slides:any[] = [
     {title:"Сбор урожая", image:"1.svg", signs:["существует<br>более 200 видов<br>кофейных деревьев", "продолжительность<br>жизни до&nbsp;60&nbsp;лет,<br>из&nbsp;них плодоносит&nbsp;&mdash;<br>с&nbsp;3&nbsp;до&nbsp;20&nbsp;лет", "достигает в&nbsp;высоту 3-4&nbsp;м", "растет на&nbsp;высоте 700-2300&nbsp;м<br>над уровнем моря"], 
      paths:"", first:{
@@ -74,5 +75,18 @@ export class AppComponent {
     } else if(this.currSlide > this.slides.length - 1){
       this.currSlide = 0;
     }
+  }
+
+  toggleInfo(){
+    this.showInfo = !this.showInfo;
+  }
+
+  ngAfterViewInit(){
+    window.addEventListener("resize", () =>{
+      if(window.innerWidth < 650){
+        this.showInfo = false;
+      } else 
+        this.showInfo = true;
+    });
   }
 }

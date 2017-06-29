@@ -11,72 +11,59 @@ export class SlideComponent implements OnInit, OnChanges {
   @Input() slide: any;
   @Input() idx: string = "";
   @Input() showText: boolean = false;
+  @Input() info: boolean = false;
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
 
-  ngOnChanges(){
-    if(this.showText){// && this.embed){
-      // var embedDiv: HTMLElement = this.embed.nativeElement;
-      // console.log(embedDiv.children)
-      var paths = document.getElementsByClassName("path");
-      var texts = document.getElementsByClassName("sign");
-
-      for(var i = 0; i < paths.length; i++){
-        var p = paths.item(i);
-        p.classList.add("shown");
-      }
-
-      for(var i = 0; i < texts.length; i++){
-        var t = texts.item(i);
-        t.classList.add("shown");
-      }
-
+  ngOnChanges(chngs){
+    if(chngs.showText || chngs.info){
+      this.switchInfo(this.showText&&this.info);
     }
-    //  else{// if(this.embed){
-    //   // var embedDiv: HTMLElement = this.embed.nativeElement;
-    //   var paths = document.getElementsByClassName("path");
-    //   var texts = document.getElementsByClassName("sign");
+  }
 
-    //   for(var i = 0; i < paths.length; i++){
-    //     var p = paths.item(i);
-    //     p.classList.remove("shown");
-    //   }
+  switchInfo(flag: boolean){
+      if(flag){// && this.embed){
+        // var embedDiv: HTMLElement = this.embed.nativeElement;
+        // console.log(embedDiv.children)
+        var paths = document.getElementsByClassName(this.idx + " path");
+        var texts = document.getElementsByClassName(this.idx + " sign");
 
-    //   for(var i = 0; i < texts.length; i++){
-    //     var t = texts.item(i);
-    //     t.classList.remove("shown");
-    //   console.log(paths, texts);
-    //   }
-    // }
+        setTimeout(() => {
+          for(var i = 0; i < paths.length; i++){
+            var p = paths.item(i);
+            p.classList.add("shown");
+          }
+
+          setTimeout(() => {
+            for(var i = 0; i < texts.length; i++){
+              var t = texts.item(i);
+              t.classList.add("shown");
+            }
+            }, 500);
+
+         }, window.innerWidth < 650? 0: 700);
+
+      } else {// if(this.embed){
+        // var embedDiv: HTMLElement = this.embed.nativeElement;
+        var paths = document.getElementsByClassName(this.idx + " path");
+        var texts = document.getElementsByClassName(this.idx + " sign");
+
+        for(var i = 0; i < paths.length; i++){
+          var p = paths.item(i);
+          p.classList.remove("shown");
+        }
+
+        for(var i = 0; i < texts.length; i++){
+          var t = texts.item(i);
+          t.classList.remove("shown");
+        }
+      }
   }
 
   ngAfterViewInit(){
-    if(this.showText){// && this.embed){
-      // var embedDiv: HTMLElement = this.embed.nativeElement;
-      // console.log(embedDiv.children)
-      var paths = document.getElementsByClassName("path");
-      var texts = document.getElementsByClassName("sign");
-
-      setTimeout(() => {
-      for(var i = 0; i < paths.length; i++){
-        var p = paths.item(i);
-        p.classList.add("shown");
-        console.log(p.classList)
-      }
-
-      setTimeout(() => {
-      for(var i = 0; i < texts.length; i++){
-        var t = texts.item(i);
-        t.classList.add("shown");
-      }
-
-      }, 500);
-
-      console.log(paths, texts);
-      }, 700);
-    }
+    this.switchInfo(this.showText&&this.info)
   }
 
   sanitizeColor(color: string){

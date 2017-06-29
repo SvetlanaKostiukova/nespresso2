@@ -1,5 +1,6 @@
 <div class="app">
-  <app-slide *ngFor="let slide of slides; let i=index;" [slide]="slide" [idx]="'slide' + i" [class.current]="currSlide==i" [showText]="currSlide==i"></app-slide>
+  <app-slide *ngFor="let slide of slides; let i=index;" [slide]="slide" [idx]="'slide' + i" [class.current]="currSlide==i" [showText]="currSlide==i" [info]="showInfo"></app-slide>
+  <div class="info-button" (click)="toggleInfo($event)"></div>
   <a href="" target="_blank"><div class="nespresso"></div></a>
   <div class="arrow left" (click)="switchSlide(-1)"></div>
   <div class="arrow right" (click)="switchSlide(1)"></div>
