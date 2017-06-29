@@ -72,8 +72,26 @@
             text-align: center;
             padding-bottom: 15px;
 
-            img{
+            .image, img{
                 max-height: 380px;
+
+                @{deep} .path{
+                    opacity:0;
+                    transition: opacity .7s;
+
+                    &.shown{
+                        opacity: 1;
+                    }
+                }
+
+                @{deep} text.sign{
+                    opacity:0;
+                    transition: opacity .9s;
+
+                    &.shown{
+                        opacity: 1;
+                    }
+                }   
             }
         }
     }
@@ -81,7 +99,7 @@
     &.slide1{
         main{
             .image-container{
-                img{
+                .image{
                     max-height: 340px;
                 }
             }
@@ -91,7 +109,7 @@
     &.slide3{
         main{
             .image-container{
-                img{
+                .image{
                     max-height: 300px;
                 }
             }

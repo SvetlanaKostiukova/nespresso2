@@ -9,7 +9,8 @@ export class AppComponent {
   title = 'app works!';
   currSlide:number = 0;
   slides:any[] = [
-    {title:"Сбор урожая", image:"1.svg", signs:["существует<br>более 200 видов<br>кофейных деревьев", "продолжительность<br>жизни до&nbsp;60&nbsp;лет,<br>из&nbsp;них плодоносит&nbsp;&mdash;<br>с&nbsp;3&nbsp;до&nbsp;20&nbsp;лет", "достигает в&nbsp;высоту 3-4&nbsp;м", "растет на&nbsp;высоте 700-2300&nbsp;м<br>над уровнем моря"], first:{
+    {title:"Сбор урожая", image:"1.svg", signs:["существует<br>более 200 видов<br>кофейных деревьев", "продолжительность<br>жизни до&nbsp;60&nbsp;лет,<br>из&nbsp;них плодоносит&nbsp;&mdash;<br>с&nbsp;3&nbsp;до&nbsp;20&nbsp;лет", "достигает в&nbsp;высоту 3-4&nbsp;м", "растет на&nbsp;высоте 700-2300&nbsp;м<br>над уровнем моря"], 
+     paths:"", first:{
       title:"Ручной сбор", description:"", list:[
         {color:"#B4DFAF", marker:"+", text:"тщательный отбор только спелых ягод"},
         {color:"#EC8B96", marker:"-", text:"низкая скорость"}
@@ -20,7 +21,7 @@ export class AppComponent {
         {color:"#EC8B96", marker:"-", text:"при сборе нельзя отделить незрелые и&nbsp;перезрелые ягоды"}
       ]
     }, end:"Nespresso используют только ручной сбор, ведь кофейное дерево зреет неравномерно, и&nbsp;только ручная сборка позволяет добиться постоянства качества и&nbsp;отобрать только спелые ягоды."},
-    {title:"Обработка зерна", image:"2.svg", first:{
+    {title:"Обработка зерна", image:"2.svg", paths:"", first:{
       title:"Сухая обработка", description:"Ягоды сушат на&nbsp;бетонных, глиняных патио или просто на&nbsp;земле", list:[
         {color:"#B4DFAF", marker:"+", text:"яркость и&nbsp;насыщенность вкуса"},
         {color:"#EC8B96", marker:"-", text:"риск получить землистый привкус и&nbsp;выраженную горчинку"}
@@ -31,7 +32,7 @@ export class AppComponent {
         {color:"#EC8B96", marker:"-", text:"дороговизна, несколько этапов контроля"}
       ]
     }, end:"Nespresso выбирает влажный метод обработки, потому что он&nbsp;позволяет лучше подчеркнуть вкусовые качества кофе и&nbsp;смягчить горчинку."},
-    {title:"Упаковка", image:"3.svg", first:{
+    {title:"Упаковка", image:"3.svg", paths:"", first:{
       title:"", description:"", list:[
         {color:"#ED8CA1", marker:"1", text:"Пластик"},
         {color:"#ED8CA1", marker:"2", text:"Стекло"},
@@ -39,7 +40,7 @@ export class AppComponent {
         {color:"#ED8CA1", marker:"4", text:"Алюминиевая капсула"}
       ]
     }, second:undefined, end:"Вкус и&nbsp;аромат натурального кофе Nespresso надежно защищены от&nbsp;воздействия влаги, солнечных лучей и&nbsp;кислорода алюминиевой капсулой вплоть до&nbsp;момента приготовления напитка."},
-    {title:"Обжарка", image:"4.svg", first:{
+    {title:"Обжарка", image:"4.svg", paths:"", first:{
       title:"", description:"", list:[
         {color:"#ED8CA1", marker:"1", text:"Скандинавская, t = 195-205 &deg;С<br><span>идеальна для кофе с&nbsp;молоком</span>"},
         {color:"#ED8CA1", marker:"2", text:"Американская, t = 210-220 &deg;С<br><span>сладкие нотки с&nbsp;кислинкой</span>"},
@@ -52,7 +53,7 @@ export class AppComponent {
         {color:"#ED8CA1", marker:"6", text:"Испанская, t = 250&nbsp;&deg;С<br><span>яркие оттенки обжарки во&nbsp;вкусе</span>"}
       ]
     }, end:"В&nbsp;Nespresso разработали специальные способы обжарки для каждого бленда, чтобы подчеркнуть особенности сортов кофе. Для каждого сорта используется раздельная обжарка при разных температурах, чтобы определить равновесие между кислинкой/горчинкой, плотностью и&nbsp;ароматом."},
-    {title:"Помол", image:"51.png", first:{
+    {title:"Помол", image:"51.png", paths:"", first:{
       title:"", description:"", list:[
         {color:"#F4E477", marker:"1", text:"Крупный<br><span>подходит для френч-пресса</span>"},
         {color:"#F4E477", marker:"2", text:"Средний<br><span>подходит для капельной и&nbsp;гейзерной кофеварки</span>"}
