@@ -143,6 +143,12 @@
                 // } 
             }
 
+            @media(max-width:649px){
+                .image{
+
+                }
+            }
+
             svg, img{
                 
                 &.mobile{
@@ -177,6 +183,18 @@
                 .image, img, svg{
                     max-height: 300px;
                     min-height:300px;
+                }
+            }
+        }
+    }
+
+    &.slide4{
+        main{
+            .image-container{
+                .image, img{
+                    @media(max-width:649px){
+                        min-height: initial;
+                    }
                 }
             }
         }
